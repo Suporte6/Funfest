@@ -138,7 +138,7 @@ function Logo() {
     });
   }, []);
 
-  const title = "FunFest";
+  const title = "";
 
   return (
     <>
@@ -150,7 +150,7 @@ function Logo() {
       <div className="logo-container">
         <img
           ref={logoRef}
-          src="/logo.png"
+          src="/logo_nova.png"
           alt="Logo da Empresa"
           className="logo"
         />
