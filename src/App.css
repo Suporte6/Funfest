@@ -1,0 +1,529 @@
+/* Estilo Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.landing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8a2be2, #4a00e0);
+  color: #ffffff;
+}
+
+/* Seção Hero */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  color: #333;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* Logo de fundo com efeito parallax */
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.08;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.hero-background img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease;
+}
+
+/* Opacidade aumentada na seção de marketplace */
+.marketplace-active .hero-background {
+  opacity: 0.25; /* Opacidade maior quando estiver na seção marketplace */
+  z-index: 1; /* Garantir que fique acima do fundo do marketplace */
+}
+
+.marketplace-active .hero-background img {
+  filter: hue-rotate(270deg) brightness(1.2) contrast(1.5);
+}
+
+.logo-container {
+  max-width: 200px;
+  margin-bottom: 3rem;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1));
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.company-title {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.title-letter {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.title-letter:hover {
+  transform: translateY(-5px);
+  color: #8a2be2;
+  text-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+/* Ícones Sociais */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: rgba(138, 43, 226, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover::before {
+  opacity: 1;
+}
+
+.whatsapp:hover {
+  background: #25d366;
+}
+
+.facebook:hover {
+  background: #1877f2;
+}
+
+.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+/* Seta de rolagem */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  color: #8a2be2;
+}
+
+.scroll-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+.scroll-text {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Seção de Marketplaces */
+.marketplace-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(
+    180deg,
+    white,
+    rgba(106, 17, 203, 0.7),
+    rgba(37, 117, 252, 0.7)
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.marketplace-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(180deg, white, transparent);
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #fff, #f0f0f0, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.marketplace-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mercado-livre {
+  color: #ffe600;
+}
+
+.shopee {
+  color: #ff5722;
+}
+
+.amazon {
+  color: #ff9900;
+}
+
+.shopify {
+  color: #7ab55c;
+}
+
+.marketplace-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.marketplace-card p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 200px;
+}
+
+.card-button {
+  background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.card-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.card-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, #ff5252, #ff7676);
+}
+
+.card-button:hover::before {
+  left: 100%;
+}
+
+/* Rodapé */
+.footer {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #4a00e0, #3f51b5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+}
+
+.footer-message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #f8f9fa;
+  position: relative;
+  display: inline-block;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.footer-message::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .marketplace-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .logo-container {
+    max-width: 150px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .company-title {
+    font-size: 2rem;
+    margin-top: 0.8rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .marketplace-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .marketplace-card {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-message {
+    font-size: 1rem;
+  }
+
+  .company-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .logo-container {
+    max-width: 120px;
+  }
+}
