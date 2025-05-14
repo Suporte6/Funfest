@@ -46,7 +46,7 @@ function SocialIcons() {
   return (
     <div className="social-icons">
       <a
-        href="https://wa.me/seunumero"
+        href="https://wa.me/5518981640023?text=Olá, Vim pelo Site"
         target="_blank"
         rel="noopener noreferrer"
         className="social-icon whatsapp"
@@ -64,7 +64,7 @@ function SocialIcons() {
         <FaFacebook />
       </a>
       <a
-        href="https://instagram.com/seuusuario"
+        href="https://www.instagram.com/funfestdecoroficial/"
         target="_blank"
         rel="noopener noreferrer"
         className="social-icon instagram"
