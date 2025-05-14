@@ -19,7 +19,16 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
   color: #ffffff;
-  background-color: #8a2be2;
+  background-color: #000000 !important;
+}
+
+/* Override para garantir fundo preto em todos os elementos */
+.landing-page,
+.hero-section,
+.marketplace-section,
+.footer {
+  background-color: #000000 !important;
+  background: #000000 !important;
 }
 
 code {
@@ -47,7 +56,7 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {

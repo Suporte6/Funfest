@@ -61,12 +61,12 @@ function Logo() {
       {
         opacity: 0,
         y: 20,
-        color: "rgba(0, 0, 0, 0.5)",
+        color: "rgba(255, 255, 255, 0.5)",
       },
       {
         opacity: 1,
         y: 0,
-        color: "rgba(51, 51, 51, 1)",
+        color: "rgba(255, 255, 255, 1)",
         duration: 0.5,
         stagger: 0.05,
         delay: 0.8,

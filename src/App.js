@@ -85,8 +85,7 @@ export default function LandingPage() {
 
     // Garantir que o fundo da seção de marketplace tenha uma opacidade que permita ver o logo
     gsap.set(marketplaceSectionRef.current, {
-      background:
-        "linear-gradient(180deg, white, rgba(106, 17, 203, 0.6), rgba(37, 117, 252, 0.6))",
+      background: "#000000",
     });
 
     // Limpar animações

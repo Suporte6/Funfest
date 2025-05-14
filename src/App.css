@@ -8,11 +8,12 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+  background-color: #000000;
 }
 
 .landing-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #8a2be2, #4a00e0);
+  background: #000000;
   color: #ffffff;
 }
 
@@ -27,8 +28,8 @@ body {
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  background-color: white;
-  color: #333;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .hero-section::before {
@@ -109,8 +110,8 @@ body {
   margin-top: 1rem;
   font-weight: 700;
   letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  color: #333;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   position: relative;
   z-index: 2;
   white-space: nowrap;
@@ -202,23 +203,20 @@ body {
 /* Seta de rolagem */
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  color: #8a2be2;
+  z-index: 10;
 }
 
 .scroll-arrow {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: #ffffff;
   animation: bounce 2s infinite;
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes bounce {
@@ -238,63 +236,42 @@ body {
 }
 
 .scroll-text {
-  font-size: 0.8rem;
-  margin-top: 8px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.8;
 }
 
 /* Seção de Marketplaces */
 .marketplace-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(
-    180deg,
-    white,
-    rgba(106, 17, 203, 0.7),
-    rgba(37, 117, 252, 0.7)
-  );
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 0;
 }
 
+/* Removendo completamente o efeito gradiente que pode causar o fundo roxo */
 .marketplace-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(180deg, white, transparent);
-  z-index: 1;
+  display: none;
 }
 
 .section-title {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(90deg, #fff, #f0f0f0, #fff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
   position: relative;
-  z-index: 2;
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .marketplace-grid {
@@ -306,19 +283,19 @@ body {
 }
 
 .marketplace-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(25, 25, 25, 0.8);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-shine {
@@ -368,33 +345,34 @@ body {
 
 .marketplace-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  margin: 1rem 0;
+  color: #ffffff;
 }
 
 .marketplace-card p {
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.5rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 200px;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .card-button {
-  background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
-  color: white;
+  display: inline-block;
   padding: 0.8rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #8a2be2, #4a00e0);
+  color: white;
   border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  display: inline-block;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 2;
 }
 
 .card-button::before {
@@ -415,42 +393,39 @@ body {
 
 .card-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
   background: linear-gradient(90deg, #ff5252, #ff7676);
-}
-
-.card-button:hover::before {
-  left: 100%;
 }
 
 /* Rodapé */
 .footer {
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, #4a00e0, #3f51b5);
+  background-color: #000000;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .footer-content {
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer-message {
   font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #f8f9fa;
-  position: relative;
-  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .copyright {
   font-size: 0.8rem;
-  margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 300;
+  opacity: 0.8;
+  color: #ffffff;
 }
 
 .footer-message::after {

@@ -6,6 +6,12 @@ function Footer() {
   const messageRef = useRef(null);
 
   useEffect(() => {
+    // Forçar o fundo preto do footer
+    if (footerRef.current) {
+      footerRef.current.style.backgroundColor = "#000000";
+      footerRef.current.style.background = "#000000";
+    }
+
     // Animação do rodapé
     gsap.fromTo(
       footerRef.current,
@@ -35,7 +41,11 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer" ref={footerRef}>
+    <footer
+      className="footer"
+      ref={footerRef}
+      style={{ backgroundColor: "#000000" }}
+    >
       <div className="footer-content">
         <p className="footer-message" ref={messageRef}>
           Obrigado por nos visitar. Estamos à disposição!
