@@ -54,7 +54,7 @@ function SocialIcons() {
       >
         <FaWhatsapp />
       </a>
-      <a
+      {/* <a
         href="https://facebook.com/suapagina"
         target="_blank"
         rel="noopener noreferrer"
@@ -62,7 +62,7 @@ function SocialIcons() {
         aria-label="Facebook"
       >
         <FaFacebook />
-      </a>
+      </a> */}
       <a
         href="https://www.instagram.com/funfestdecoroficial/"
         target="_blank"
